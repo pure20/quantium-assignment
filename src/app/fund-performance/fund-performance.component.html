@@ -1,1 +1,86 @@
-<p>fund-performance works!</p>
+<div class="w-full content-container">
+    <div class="p-10">
+      <div>
+        <div class="flex flex-row flex-auto gap-4">
+          <mat-card class="relative flex flex-row w-full">
+            <mat-card-content>
+                <h1 class="font-medium">Fund performance: GGV USD Fund V</h1>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="flex flex-row sm:flex-col md:flex-col lg:flex-row flex-auto gap-4 pt-6">
+          <mat-card class="flex-none w-5/12 sm:w-full md:w-full lg:w-5/12">
+            <mat-card-header class="flex flex-col">
+              <div>
+                <h3 class="left font-medium">Deal allocation (number of assets)</h3>
+                <div class="right">
+                  <mat-button-toggle-group value="sector">
+                    <mat-button-toggle value="sector">Sector</mat-button-toggle>
+                    <mat-button-toggle value="industry">Industry</mat-button-toggle>
+                  </mat-button-toggle-group>
+                </div>
+              </div>
+            </mat-card-header>
+            <mat-card-content>
+              <google-chart
+                [type]="type"
+                [data]="pieChartData"
+                [columns]="pieChartColumns"
+                [options]="options"
+              ></google-chart>
+              <div class="centerLabel">Total = 8</div>
+            </mat-card-content>
+          </mat-card>
+          <mat-card class="grow w-full">
+            <mat-card-header class="flex flex-col">
+              <div>
+                <h3 class="left font-medium">Investment by quarter</h3>
+                <div class="right">
+                    <button mat-raised-button color="primary" class="mr-2">Cumulative investment cost</button>
+                    <button mat-raised-button color="primary">Cumulative total value</button>
+                </div>
+              </div>
+            </mat-card-header>
+            <mat-card-content>
+                <google-chart
+                  [type]="lineType"
+                  [data]="lineChartData"
+                  [columns]="lineChartColumns"
+                  [options]="lineOptions"
+                ></google-chart>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="pt-6">
+          <mat-card class="grow w-full">
+            <mat-card-header class="flex flex-col">
+              <div>
+                <div class="left">
+                  <h3 class="font-medium">Portfolio summary</h3>
+                  <span class="caption">Realization and Portfolio Summary in USDE Million unless otherwise stated</span>
+                </div>
+                <div class="right">
+                  <mat-button-toggle-group value="asset">
+                    <mat-button-toggle value="deal">Deal</mat-button-toggle>
+                    <mat-button-toggle value="asset">Asset</mat-button-toggle>
+                  </mat-button-toggle-group>
+                </div>
+              </div>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="flex flex-col overflow-table">
+                <google-chart
+                  class="pt-3 portfolio-summary"
+                  [type]="tableType"
+                  [data]="tableData"
+                  [columns]="tableColumns"
+                  [options]="tableOptions"
+                  [formatters]="myFormatters"
+                ></google-chart>
+              </div> 
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>

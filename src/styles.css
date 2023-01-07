@@ -14,9 +14,17 @@ html, body {
     -moz-osx-font-smoothing: auto;
     font-size: 15px;
 
- }
+}
+
 body { 
-    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.content-container {
+    background-color: #f7f9ff;
+    height: auto;
+    min-height: 100%;
+}
 
 .mat-button-toggle {
   font-size: 15px;
@@ -123,22 +131,26 @@ a.main-menu:hover {
 }
 
 .portfolio-summary td,
-.portfolio-summary tr {
+.portfolio-summary tr,
+.aa-performance td,
+.aa-performance tr {
     border-width: 0px 0px 0px 0px;
 }
 
 .google-visualization-table-table {
     overflow-x: scroll;
 }
-.google-visualization-table-table td,
-.google-visualization-table-table th {
+.portfolio-summary .google-visualization-table-table td,
+.portfolio-summary .google-visualization-table-table th,
+.aa-performance .google-visualization-table-table td,
+.aa-performance .google-visualization-table-table th {
     border-width: 0px 0px 1px 0px !important;
 }
 
-.google-visualization-table-table th:nth-child(5),
-.google-visualization-table-table th:nth-child(10),
-.google-visualization-table-table td:nth-child(5),
-.google-visualization-table-table td:nth-child(10) {
+.portfolio-summary .google-visualization-table-table th:nth-child(5),
+.portfolio-summary .google-visualization-table-table th:nth-child(10),
+.portfolio-summary .google-visualization-table-table td:nth-child(5),
+.portfolio-summary .google-visualization-table-table td:nth-child(10) {
     border-width: 0px 1px 1px 0px !important;
 }
 

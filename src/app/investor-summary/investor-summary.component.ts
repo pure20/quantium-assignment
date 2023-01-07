@@ -11,6 +11,7 @@ export class InvestorSummaryComponent implements OnInit {
   private readonly chartPackage = getPackageForChart(ChartType.Table);
   dateFormat: google.visualization.DateFormat;
   myFormatters: any;
+  myAggregatedFormatters: any;
   constructor(private loaderService: ScriptLoaderService)
   {
 
@@ -25,40 +26,28 @@ export class InvestorSummaryComponent implements OnInit {
           colIndex: [0],
         },
         {
-          formatter: new google.visualization.DateFormat({ pattern: "MM-yyyy" }),
-          colIndex: 1
+          formatter: new google.visualization.NumberFormat({ pattern: "#,###.0" }),
+          colIndex: 2
         },
         {
-          formatter: new google.visualization.NumberFormat({ suffix: "%" }),
+          formatter: new google.visualization.NumberFormat({ pattern: "#,###.0" }),
+          colIndex: 3
+        },
+        {
+          formatter: new google.visualization.NumberFormat({ pattern: "#,###.0" }),
           colIndex: 4
         },
         {
-          formatter: new google.visualization.NumberFormat({ prefix: "$" }),
+          formatter: new google.visualization.NumberFormat({ pattern: "#,###.0" }),
           colIndex: 5
         },
         {
-          formatter: new google.visualization.NumberFormat({ prefix: "$" }),
+          formatter: new google.visualization.NumberFormat({ pattern: "#,###.0x" }),
           colIndex: 6
         },
         {
-          formatter: new google.visualization.NumberFormat({ prefix: "$" }),
+          formatter: new google.visualization.NumberFormat({ pattern: "#,###.0%" }),
           colIndex: 7
-        },
-        {
-          formatter: new google.visualization.NumberFormat({ prefix: "$" }),
-          colIndex: 8
-        },
-        {
-          formatter: new google.visualization.NumberFormat({ prefix: "$" }),
-          colIndex: 9
-        },
-        {
-          formatter: new google.visualization.NumberFormat({ suffix: "x" }),
-          colIndex: 10
-        },
-        {
-          formatter: new google.visualization.NumberFormat({ suffix: "%" }),
-          colIndex: 11
         }
       ];
     });
@@ -68,108 +57,72 @@ export class InvestorSummaryComponent implements OnInit {
   type: ChartType = ChartType.PieChart;
   lineType: ChartType = ChartType.ComboChart;
   tableType: ChartType = ChartType.Table;
-  
+  columnType: ChartType =ChartType.ColumnChart;
   // column chart
-  pieChartColumns = [
-    'Sector',
-    'value'
+  columnChartColumns = [
+    'Name',
+    'USD Fund V',
+    'USD Fund VI'
   ];
   
-  pieChartData: Row[] = [
-    ['Energy', 1],
-    ['Consumer Durables & Apparel', 1],
-    ['Consumer Services', 1],
-    ['Insurance', 1],
-    ['Material', 1],
-    ['Software & Services', 1],
-    ['Technology Hardware & Equipment', 1],
-    ['Health Care Equipment & Services', 1]
+  columnChartData: Row[] = [
+    ['Contribution', 10, 10],
+    ['Distribution', 10, 0],
+    ['NAV', 30, 20],
+    ['Total value', 50, 20],
+   
   ];
-
+ 
   options = {
-    colors: ['#7cbfb7', '#1898ac', '#344b79', '#ebac78', '#67809f', '#e8aea3', '#336e7b', '#d24d57'],
-    pieHole: 0.4,
-    width: 420,
+    colors: ['#0070c0', '#1f4e79'],
+    width: 620,
     height: 290,
-    legend: { maxLines: 1, textStyle: {fontSize: 11}, alignment:'center' },
-    pieSliceText: 'value',
-    chartArea: { left: 10, width: 390, height: 300 }
+    chartArea: { width: 560 },
+    legend: { position: 'top', textStyle: {fontSize: 11}, alignment:'center' },
+    isStacked: true,
+    hAxis: {
+      gridlines: { color: 'transparent' },
+    },
+    vAxis:{
+      gridlines: { color: 'transparent' },
+    },
   };
+
+
 
   // column chart
-  lineChartColumns = [
-    "Month", "Cumulative investment cost", "Cumulative total value"
+  tableAggregatedColumns = [
+    "USD", "2020-12-31", "2020-12-31", "QoQ"
   ];
   
-  lineChartData: Row[] = [
-    [new Date(2015, 0), 0, null],
-    [new Date(2015, 3), 0, null],
-    [new Date(2015, 6), 0, null],
-    [new Date(2015, 9), 0, null],
-    [new Date(2016, 0), 0, null],
-    [new Date(2016, 3), 0, null],
-    [new Date(2016, 6), 0, null],
-    [new Date(2016, 9), 20, null],
-    [new Date(2017, 0), 20, null],
-    [new Date(2017, 3), 20, 20],
-    [new Date(2017, 6), 60, 50],
-    [new Date(2017, 9), 100, 90],
-    [new Date(2018, 0), 120, 110],
-    [new Date(2018, 3), 150, 140],
-    [new Date(2018, 6), 220, 200],
-    [new Date(2018, 9), 220, 200],
-    [new Date(2019, 0), 220, 200],
-    [new Date(2019, 3), 300, 220],
-    [new Date(2019, 6), 300, 220],
-    [new Date(2019, 9), 300, 220],
-    [new Date(2020, 0), 300, 220],
-    [new Date(2020, 3), 300, 220],
-    [new Date(2020, 6), 300, 220],
-    [new Date(2020, 9), 300, 220],
+  tableAggregatedData: Row[] = [
+    ["Commitment", 8591.00, 7, 0.75],
+    ["Contribution", 1643.68, 15.10, 0.52],
+    ["Distribution", 115.00, 30.00, null],
+    ["Nav", 1992.44, 40.00, 4.96],
+    ["Total invested", 958.29, 30.00, 0.08],
+    ["Total value", 2107.44, 40.00, 4.96],
+    ["DPI", 0.07, 0.07, 0.00],
+    ["RVPI", 1.21, 1.22, 0.00],
+    ["TVPI", 1.28, 1.29, 0.00],
   ];
 
-  lineOptions = {
-    hAxis: {
-      title: '',
-      viewWindow: {
-        max: new Date(2026, 9)
-      },
-      format: "yyyy",
-      gridlines: { color: 'transparent' },
-      textStyle: {fontSize: 11}
-    },
-    pointSize: 3,
-    vAxis:{
-        title: 'USD (M)',
-        ticks: [50,100,150,200,250,300,350,400],
-        viewWindow: {
-          max: 400
-        },
-        textStyle: {fontSize: 11}
-    },
-    chartArea: { left: 90, width: 590 },
-    width: 670,
-    height: 300,
-    colors: ['#eab676', '#063970'],
-    legend: { left: 0, position: 'bottom', textStyle: {fontSize: 11} },
+  cssAggregatedClassNames = {
+    'headerRow': 'headerTable',
+  }
+  tableAggregatedOptions = {
+    'allowHtml': true, 'cssClassNames': this.cssAggregatedClassNames, alternatingRowStyle: false
   };
-
 
   // column chart
   tableColumns = [
-    "Name", "Initial investment", "Main Industry", "Commit/Reserves", "Current ownership", "Total investment cost",
-    "Current investment cost", "Realized", "Fair market value", "Total value", "Multiple of cost", "Gross IRR"
+    "Fund", "Investor Entity", "Commitment", "Invested", "Realized", "Remaining Fair Value","Gross MoC", "Net IRR"
   ];
   
   tableData: Row[] = [
-    ["Genesys", new Date(2016, 11), "Oil Gas & Consumable Fuels", "-", 12.10, 7, 7, null, 7, 7, 1, null],
-    ["Treasury Tech", new Date(2017, 0), "Leisure Equipment & Products", "-", 10.00, 15.10, 0.10, 70, 0.10, 70.10, 4.64, 72.57],
-    ["RS Education", new Date(2018, 0), "Diversified Consumer Services", "-", 3.04, 30.00, 30.00, null, 40.00, 40.00, 1.33, 9.27],
-    ["SR Insurance Technology", new Date(2018, 4), "Insurance", "-", 5.07, 40.00, 40.00, null, 40.00, 40.00, 1, null],
-    ["Syntec Automation", new Date(2018, 6), "Construction Materials", "-", 5.32, 30.00, 30.00, null, 30.00, 30.00, 1, null],
-    ["Tinker Technologies", new Date(2018, 9), "Internet Software & Services", "-", 12.33, 40.00, 40.00, null, 40.00, 40.00, 1, null],
-    ["TSM Healthcare", new Date(2019, 11), "Health Care Equipment & Supplies", "-", 18.72, 48.00, 48.00, null, 48.00, 48.00, 1, null],
-    ["WD", new Date(2019, 10), "Computers & Peripherals", "-", 50.00, 8.00, 8.00, null, 30.00, 30.00, 3.75, 155.87],
+    ["GGV USD Fund V", "Asia Alternative I", 1.0, 1.0, 1.0, 1.0, 2.0, 0.20],
+    ["GGV USD Fund VI", "Asia Alternative Asia", 1.0, 1.0, 1.0, 1.0, 2.0, 0.20],
+    ["GGV USD Fund VI", "Asia Alternative I", 1.0, 1.0, 1.0, 1.0, 2.0, 0.20]
   ];
 
   
