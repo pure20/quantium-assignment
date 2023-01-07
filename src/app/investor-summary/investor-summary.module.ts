@@ -4,6 +4,8 @@ import { InvestorSummaryComponent } from './investor-summary.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { GoogleChartsModule, ChartType } from 'angular-google-charts';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 const routes: Routes = [
   { path: '', component: InvestorSummaryComponent },
@@ -18,7 +20,8 @@ const routes: Routes = [
     CommonModule,
     SharedModule,
     GoogleChartsModule,
-    
+    MatCardModule,
+    MatButtonToggleModule
   ]
 })
 export class InvestorSummaryModule { }

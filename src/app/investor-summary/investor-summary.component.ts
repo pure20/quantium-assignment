@@ -11,7 +11,7 @@ export class InvestorSummaryComponent {
   title = 'Google Chart Example';
   type: ChartType = ChartType.PieChart;
 
-  lineType: ChartType = ChartType.LineChart;
+  lineType: ChartType = ChartType.ComboChart;
   
   // column chart
   pieChartColumns = [
@@ -36,9 +36,10 @@ export class InvestorSummaryComponent {
     colors: ['#7cbfb7', '#1898ac', '#344b79', '#ebac78', '#67809f', '#e8aea3', '#336e7b', '#d24d57'],
     pieHole: 0.4,
     width: 600,
-    height: 400,
+    height: 300,
     legend: { maxLines: 1, textStyle: {fontSize: 11}, alignment:'center' },
-    pieSliceText: 'value'
+    pieSliceText: 'value',
+    chartArea: { height: 300 }
   };
 
   // column chart
@@ -78,18 +79,23 @@ export class InvestorSummaryComponent {
       title: '',
       viewWindow: {
         max: new Date(2026, 9)
-      }
+      },
+      format: "yyyy",
+      gridlines: { color: 'transparent' },
+      textStyle: {fontSize: 11}
     },
+    pointSize: 3,
     vAxis:{
         title: 'USD (M)',
         ticks: [50,100,150,200,250,300,350,400],
         viewWindow: {
           max: 400
-        }
+        },
+        textStyle: {fontSize: 11}
     },
-    width: 800,
+    width: 900,
     height: 300,
     colors: ['#eab676', '#063970'],
-    legend: { position: 'bottom'},
+    legend: { position: 'bottom', textStyle: {fontSize: 11} },
   };
 }

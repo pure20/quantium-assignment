@@ -1,16 +1,34 @@
-<p>investor-summary works!</p>
-<div>
-<google-chart
-    [type]="type"
-    [data]="pieChartData"
-    [columns]="pieChartColumns"
-    [options]="options"
-  ></google-chart>
-  <div class="centerLabel">Total = 8</div>
+<div style="background-color: #efefef;">
+  <p>investor-summary works!</p>
+  <div>
+    <div class="grid grid-cols-2 gap-4">
+      <mat-card class="relative">
+        <mat-card-header>
+          <mat-button-toggle-group>
+            <mat-button-toggle value="sector">Sector</mat-button-toggle>
+            <mat-button-toggle value="industry">Industry</mat-button-toggle>
+          </mat-button-toggle-group>
+        </mat-card-header>
+        <mat-card-content>
+          <google-chart
+            [type]="type"
+            [data]="pieChartData"
+            [columns]="pieChartColumns"
+            [options]="options"
+          ></google-chart>
+          <div class="centerLabel">Total = 8</div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-content>
+            <google-chart
+              [type]="lineType"
+              [data]="lineChartData"
+              [columns]="lineChartColumns"
+              [options]="lineOptions"
+            ></google-chart>
+        </mat-card-content>
+      </mat-card>
+  </div>
+  </div>
 </div>
-  <google-chart
-    [type]="lineType"
-    [data]="lineChartData"
-    [columns]="lineChartColumns"
-    [options]="lineOptions"
-  ></google-chart>
