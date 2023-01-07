@@ -1,2 +1,46 @@
-<div style="float: left;" *ngIf="showSidebar">sidebar menu</div>
-<router-outlet></router-outlet>
+
+<div class="navigation-sidebar-wrapper leading-10">
+    <div class="navigation-content">
+        <img src="assets/images/ggv-capital.png" width="80" />
+        <ng-container>
+            <div class="pt-14">
+                Investor summary
+            </div>
+        </ng-container>
+        <ng-container>
+            <div class="pt-4">
+                Fund performance
+                <ng-container>
+                    <div class="sub-menu">USD Fund V</div>
+                    <div class="sub-menu">USD Fund VI</div>
+                </ng-container>
+            </div>
+        </ng-container>
+        <ng-container>
+            <div class="pt-4">
+                Highlighted portfolio
+                <ng-container>
+                    <div class="sub-menu">Alibaba</div>
+                    <div class="sub-menu">Taikang insurance</div>
+                    <div class="sub-menu">GME Asset</div>
+                </ng-container>
+            </div>
+        </ng-container>
+        <ng-container>
+            <div class="pt-4">
+                File manager
+                <ng-container>
+                    <div class="sub-menu">Tax center</div>
+                    <div class="sub-menu">Other documents</div>
+                </ng-container>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<div class="flex flex-col flex-auto w-full min-w-0">
+    
+    <div class="content-wrapper">
+        <div class="nagivation-top">Top Navigation</div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

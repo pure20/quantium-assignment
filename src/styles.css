@@ -4,13 +4,101 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { 
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 100%;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+    font-size: 15px;
 
-.relative {
+ }
+body { 
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-button-toggle {
+  font-size: 15px;
+  padding: 0px;
+}
+
+.mat-button-toggle > .mat-button-toggle-button {
+    padding: 0px;
+    height: 30px !important;
+}
+
+.mat-button-toggle-group-appearance-standard {
+    height: 35px !important;
+}
+.mat-button-toggle-group-appearance-standard .mat-button-toggle + .mat-button-toggle
+{
+    height: 35px !important;
+    border-color: #17375e;
+}
+
+.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    line-height: 35px;
+    color: #17375e;
+}
+
+.mat-button-toggle-checked.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    background-color: #17375e;
+    color: white !important;
+}
+
+.mat-button-toggle-standalone.mat-button-toggle-appearance-standard, .mat-button-toggle-group-appearance-standard {
+    border-color: #17375e;
+}
+
+.navigation-sidebar-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 210px;
+    align-items: stretch;
+    overflow: visible;
+    height: auto;
+    left: 0;
+    background-color: white;
+    border-right: 1px solid #EFEFEF;
+}
+
+.navigation-content {
+    padding: 30px;
+}
+
+.nagivation-top {
+    border-bottom: 1px solid #EFEFEF;
+    padding: 10px;
+}
+
+.content-wrapper {
     position: relative;
+    padding-left: 210px;
 }
 
-mat-button-toggle {
-  font-size: 12px;
+.sub-menu {
+    padding-left: 20px;
 }
+
+.mat-mdc-button {
+    background-color: #17375e;
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+    background-color: #17375e !important;
+}
+
+.right {
+    float: right
+}
+.left {
+    float: left
+}
+
+.caption {
+    font-size: 12px;
+}
+

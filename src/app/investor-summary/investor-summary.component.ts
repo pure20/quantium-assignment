@@ -15,7 +15,7 @@ export class InvestorSummaryComponent {
   
   // column chart
   pieChartColumns = [
-    'Year',
+    'Sector',
     'value',
     { role: 'style' },
     { role: 'annotation' },
@@ -35,11 +35,11 @@ export class InvestorSummaryComponent {
   options = {
     colors: ['#7cbfb7', '#1898ac', '#344b79', '#ebac78', '#67809f', '#e8aea3', '#336e7b', '#d24d57'],
     pieHole: 0.4,
-    width: 600,
-    height: 300,
+    width: 420,
+    height: 290,
     legend: { maxLines: 1, textStyle: {fontSize: 11}, alignment:'center' },
     pieSliceText: 'value',
-    chartArea: { height: 300 }
+    chartArea: { left: 10, width: 390, height: 300 }
   };
 
   // column chart
@@ -93,9 +93,10 @@ export class InvestorSummaryComponent {
         },
         textStyle: {fontSize: 11}
     },
-    width: 900,
+    chartArea: { left: 90, width: 590 },
+    width: 670,
     height: 300,
     colors: ['#eab676', '#063970'],
-    legend: { position: 'bottom', textStyle: {fontSize: 11} },
+    legend: { left: 0, position: 'bottom', textStyle: {fontSize: 11} },
   };
 }
