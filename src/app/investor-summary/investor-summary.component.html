@@ -1,8 +1,16 @@
 <p>investor-summary works!</p>
+<div>
 <google-chart
-    [title]="title"
     [type]="type"
     [data]="pieChartData"
     [columns]="pieChartColumns"
     [options]="options"
+  ></google-chart>
+  <div class="centerLabel">Total = 8</div>
+</div>
+  <google-chart
+    [type]="lineType"
+    [data]="lineChartData"
+    [columns]="lineChartColumns"
+    [options]="lineOptions"
   ></google-chart>
