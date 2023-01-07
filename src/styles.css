@@ -52,7 +52,7 @@ body {
 }
 
 .navigation-sidebar-wrapper {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
@@ -63,11 +63,13 @@ body {
     left: 0;
     background-color: white;
     border-right: 1px solid #EFEFEF;
+    z-index: 20;
 }
 
 .navigation-content {
     padding: 30px;
 }
+
 
 .nagivation-top {
     border-bottom: 1px solid #EFEFEF;
@@ -79,8 +81,12 @@ body {
     padding-left: 210px;
 }
 
+a.sub-menu:hover,
+a.main-menu:hover {
+    font-weight: bold;
+}
 .sub-menu {
-    padding-left: 20px;
+    margin-left: 20px;
 }
 
 .mat-mdc-button {
@@ -102,3 +108,40 @@ body {
     font-size: 12px;
 }
 
+.headerTable {
+    background-color: #17375e;
+    color: white;
+}
+
+.headerTable th {
+    background-image: none !important;
+    padding: 2px 20px !important;
+}
+
+.link {
+    color: #77afe5;
+}
+
+.portfolio-summary td,
+.portfolio-summary tr {
+    border-width: 0px 0px 0px 0px;
+}
+
+.google-visualization-table-table {
+    overflow-x: scroll;
+}
+.google-visualization-table-table td,
+.google-visualization-table-table th {
+    border-width: 0px 0px 1px 0px !important;
+}
+
+.google-visualization-table-table th:nth-child(5),
+.google-visualization-table-table th:nth-child(10),
+.google-visualization-table-table td:nth-child(5),
+.google-visualization-table-table td:nth-child(10) {
+    border-width: 0px 1px 1px 0px !important;
+}
+
+.overflow-table {
+    overflow-x: scroll;
+}
