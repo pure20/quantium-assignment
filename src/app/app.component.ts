@@ -8,7 +8,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'quantium-assignment';
+  title = 'Quantium Fund';
   showSidebar = false;
   faBars = faBars;
   
