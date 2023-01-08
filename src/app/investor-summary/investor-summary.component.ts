@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartType, getPackageForChart, ScriptLoaderService } from 'angular-google-charts';
 import { Row } from 'angular-google-charts/lib/components/chart-base/chart-base.component';
-import { columnChartColumns as columnChartColumnsData, columnChartData as columnChartDataData, options as optionsData } from './column-mock-data';
+import { columnChartColumns as columnChartColumnsData, columnChartData as columnChartDataData, options as optionsData } from './mock-data/column-mock-data';
+import { aggregatedColumns as aggregatedColumnsData, aggregatedData as aggregatedDataData, aggregatedOptions as aggregatedOptionsData } from './mock-data/aggregated-overview';
 @Component({
   selector: 'app-investor-summary',
   templateUrl: './investor-summary.component.html',
@@ -79,38 +80,15 @@ export class InvestorSummaryComponent implements OnInit {
   lineType: ChartType = ChartType.ComboChart;
   tableType: ChartType = ChartType.Table;
   columnType: ChartType =ChartType.ColumnChart;
+
   // column chart
   columnChartColumns = columnChartColumnsData;
   columnChartData = columnChartDataData;
   options = optionsData;
-  
 
-
-
-  // column chart
-  tableAggregatedColumns = [
-    "USD", "2020-12-31", "2020-12-31", "QoQ"
-  ];
-  
-  tableAggregatedData: Row[] = [
-    ["Commitment", 8591.00, 8590.25, -0.75],
-    ["Contribution", 1643.68, 1643.16, -0.52],
-    ["Distribution", 115.00, 115, null],
-    ["NAV", 1992.44, 1997.40, 4.96],
-    ["Total invested", 958.29, 958.21, -0.08],
-    ["Total value", 2107.44, 2112.40, 4.96],
-    ["DPI", 0.07, 0.07, 0.00],
-    ["RVPI", 1.21, 1.22, 0.00],
-    ["TVPI", 1.28, 1.29, 0.00],
-  ];
-
-  cssAggregatedClassNames = {
-    'headerRow': 'headerTable',
-    'tableRow': 'rowTable',
-  }
-  tableAggregatedOptions = {
-    'allowHtml': true, 'cssClassNames': this.cssAggregatedClassNames, alternatingRowStyle: false
-  };
+  tableAggregatedColumns = aggregatedColumnsData;
+  tableAggregatedData = aggregatedDataData;
+  tableAggregatedOptions = aggregatedOptionsData;
 
   // column chart
   tableColumns = [
