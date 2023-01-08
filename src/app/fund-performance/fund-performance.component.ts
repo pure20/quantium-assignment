@@ -36,6 +36,14 @@ export class FundPerformanceComponent implements OnInit {
       // Start creating your chart now
       this.myFormatters = [
         {
+          formatter: new google.visualization.PatternFormat('<span class="no-wrap">{0}</span>'),
+          colIndex: [0]
+        },
+        {
+          formatter: new google.visualization.PatternFormat('<span class="no-wrap">{0}</span>'),
+          colIndex: [2]
+        },
+        {
           formatter: new google.visualization.DateFormat({ pattern: "MM-yyyy" }),
           colIndex: 1
         },

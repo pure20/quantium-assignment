@@ -257,3 +257,7 @@ a.active {
 .sub-1 {
     margin-left: 10px;
 }
+
+.no-wrap {
+    white-space: nowrap;
+}
