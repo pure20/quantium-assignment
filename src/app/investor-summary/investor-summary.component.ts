@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartType, getPackageForChart, ScriptLoaderService } from 'angular-google-charts';
 import { Row } from 'angular-google-charts/lib/components/chart-base/chart-base.component';
-import { columnChartColumns as columnChartColumnsData, columnChartData as columnChartDataData } from './column-mock-data';
+import { columnChartColumns as columnChartColumnsData, columnChartData as columnChartDataData, options as optionsData } from './column-mock-data';
 @Component({
   selector: 'app-investor-summary',
   templateUrl: './investor-summary.component.html',
@@ -82,21 +82,8 @@ export class InvestorSummaryComponent implements OnInit {
   // column chart
   columnChartColumns = columnChartColumnsData;
   columnChartData = columnChartDataData;
- 
-  options = {
-    colors: ['#0070c0', '#1f4e79'],
-    width: 620,
-    height: 290,
-    chartArea: { width: 560 },
-    legend: { position: 'top', textStyle: {fontSize: 11}, alignment:'center' },
-    isStacked: true,
-    hAxis: {
-      gridlines: { color: 'transparent' },
-    },
-    vAxis:{
-      gridlines: { color: 'transparent' },
-    },
-  };
+  options = optionsData;
+  
 
 
 
