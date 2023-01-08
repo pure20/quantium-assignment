@@ -19,6 +19,25 @@ export class InvestorSummaryComponent implements OnInit {
 
   ngOnInit(): void {
     this.loaderService.loadChartPackages(this.chartPackage).subscribe(() => {
+      this.myAggregatedFormatters = [
+        {
+          formatter: new google.visualization.NumberFormat({ pattern: "$#,###.0m" }),
+          colIndex: 1
+        },
+        {
+          formatter: new google.visualization.NumberFormat({ pattern: "$#,###.0m" }),
+          colIndex: 2
+        },
+        {
+          formatter: new google.visualization.NumberFormat({ prefix: "$", negativeColor: "#ab0602", negativeParens: true }),
+          colIndex: 3
+        }
+        ,
+        {
+          formatter: new google.visualization.ArrowFormat(),
+          colIndex: 3
+        }
+      ]
       // Start creating your chart now
       this.myFormatters = [
         {
@@ -96,12 +115,12 @@ export class InvestorSummaryComponent implements OnInit {
   ];
   
   tableAggregatedData: Row[] = [
-    ["Commitment", 8591.00, 7, 0.75],
-    ["Contribution", 1643.68, 15.10, 0.52],
-    ["Distribution", 115.00, 30.00, null],
-    ["Nav", 1992.44, 40.00, 4.96],
-    ["Total invested", 958.29, 30.00, 0.08],
-    ["Total value", 2107.44, 40.00, 4.96],
+    ["Commitment", 8591.00, 8590.25, -0.75],
+    ["Contribution", 1643.68, 1643.16, -0.52],
+    ["Distribution", 115.00, 115, null],
+    ["NAV", 1992.44, 1997.40, 4.96],
+    ["Total invested", 958.29, 958.21, -0.08],
+    ["Total value", 2107.44, 2112.40, 4.96],
     ["DPI", 0.07, 0.07, 0.00],
     ["RVPI", 1.21, 1.22, 0.00],
     ["TVPI", 1.28, 1.29, 0.00],

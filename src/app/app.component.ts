@@ -21,7 +21,7 @@ export class AppComponent {
       if (val instanceof NavigationStart) {
         this.activeRoute = val.url.split('/')[1]
 
-        if (this.activeRoute == 'fund' || this.activeRoute == 'login') {
+        if (this.activeRoute == 'fund' || this.activeRoute == 'login' || this.activeRoute == '') {
           this.showSidebar = false
         }
         else {
