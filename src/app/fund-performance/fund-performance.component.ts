@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartType, getPackageForChart, Row, ScriptLoaderService } from 'angular-google-charts';
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
+
 import { 
   pieChartColumns as pieChartColumnsData,
   pieChartData as pieChartDataData,
@@ -22,7 +23,6 @@ import {
   styleUrls: ['./fund-performance.component.css']
 })
 export class FundPerformanceComponent implements OnInit {
-  private readonly chartPackage = getPackageForChart(ChartType.Table);
   dateFormat: google.visualization.DateFormat;
   myFormatters: any;
   faCalendar = faCalendarDays;
@@ -32,7 +32,7 @@ export class FundPerformanceComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loaderService.loadChartPackages(this.chartPackage).subscribe(() => {
+    this.loaderService.loadChartPackages().subscribe(() => {
       // Start creating your chart now
       this.myFormatters = [
         {

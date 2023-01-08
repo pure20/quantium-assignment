@@ -167,9 +167,12 @@ a.active {
 .aa-performance .google-visualization-table-table td,
 .aa-performance .google-visualization-table-table th,
 .aggregated-overview .google-visualization-table-table td,
-.aggregated-overview .google-visualization-table-table th {
+.aggregated-overview .google-visualization-table-table th,
+.file-manager .google-visualization-table-table td,
+.file-manager .google-visualization-table-table th {
     border-width: 0px 0px 1px 0px !important;
     border-color: #e2e2e2;
+    padding: 5px;
 }
 
 .portfolio-summary .google-visualization-table-table th:nth-child(5),
@@ -237,4 +240,20 @@ a.active {
 .label-green {
     background-color: #e2f0d9;
     color: #49608d;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.folder {
+    width: 23px;
+}
+
+.file {
+    width: 14px;
+}
+
+.sub-1 {
+    margin-left: 10px;
 }

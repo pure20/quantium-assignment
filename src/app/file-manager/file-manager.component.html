@@ -8,5 +8,20 @@
             </mat-card-content>
           </mat-card>
         </div>
+        <div class="pt-6">
+          <mat-card class="grow w-full">
+            <mat-card-content>
+              <google-chart
+                  class="pt-3 file-manager"
+                  [type]="tableType"
+                  [data]="tableData"
+                  [columns]="tableColumns"
+                  [options]="tableOptions"
+                  [formatters]="myFormatters"
+                  (select)="select()"
+                ></google-chart>
+            </mat-card-content>
+          </mat-card>
+        </div>
     </div>
 </div>
