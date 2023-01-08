@@ -3,14 +3,14 @@
         <img src="assets/images/ggv-capital.png" width="80" />
         <ng-container>
             <div class="pt-14">
-                <div><a href="/investor-summary" class="main-menu" [ngClass]="{'active': activeRoute === 'investor-summary'}">Investor summary</a></div>
+                <div><a href="/#/investor-summary" class="main-menu" [ngClass]="{'active': activeRoute === 'investor-summary'}">Investor summary</a></div>
             </div>
         </ng-container>
         <ng-container>
             <div class="pt-4">
                 Fund performance <fa-icon [icon]="faChevronDown" class="ml-2 text-lg"></fa-icon>
                 <ng-container>
-                    <div><a href="/fund-performance" class="sub-menu" [ngClass]="{'active': activeRoute === 'fund-performance'}">USD Fund V</a></div>
+                    <div><a href="/#/fund-performance" class="sub-menu" [ngClass]="{'active': activeRoute === 'fund-performance'}">USD Fund V</a></div>
                     <div><a class="sub-menu">USD Fund VI</a></div>
                 </ng-container>
             </div>
@@ -30,7 +30,7 @@
                 File manager <fa-icon [icon]="faChevronDown" class="ml-2 text-lg"></fa-icon>
                 <ng-container>
                     <div><a class="sub-menu">Tax center</a></div>
-                    <div><a href="/file-manager" class="sub-menu" [ngClass]="{'active': activeRoute === 'file-manager'}">Other documents</a></div>
+                    <div><a href="/#/file-manager" class="sub-menu" [ngClass]="{'active': activeRoute === 'file-manager'}">Other documents</a></div>
                 </ng-container>
             </div>
         </ng-container>
