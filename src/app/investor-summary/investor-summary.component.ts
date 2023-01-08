@@ -1,8 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartType, getPackageForChart, ScriptLoaderService } from 'angular-google-charts';
 import { Row } from 'angular-google-charts/lib/components/chart-base/chart-base.component';
-import { columnChartColumns as columnChartColumnsData, columnChartData as columnChartDataData, options as optionsData } from './mock-data/column-mock-data';
-import { aggregatedColumns as aggregatedColumnsData, aggregatedData as aggregatedDataData, aggregatedOptions as aggregatedOptionsData } from './mock-data/aggregated-overview';
+import { 
+  columnChartColumns as columnChartColumnsData,
+  columnChartData as columnChartDataData,
+  options as optionsData } from './mock-data/column-mock-data';
+import { 
+  aggregatedColumns as aggregatedColumnsData,
+  aggregatedData as aggregatedDataData,
+  aggregatedOptions as aggregatedOptionsData } from './mock-data/aggregated-overview';
+import { 
+  tableColumns as tableColumnsData,
+  tableData as tableDataData,
+  tableOptions as tableOptionsData } from './mock-data/aa-performance';
+
 @Component({
   selector: 'app-investor-summary',
   templateUrl: './investor-summary.component.html',
@@ -91,23 +102,7 @@ export class InvestorSummaryComponent implements OnInit {
   tableAggregatedOptions = aggregatedOptionsData;
 
   // column chart
-  tableColumns = [
-    "Fund", "Investor Entity", "Commitment", "Invested", "Realized", "Remaining Fair Value","Gross MoC", "Net IRR"
-  ];
-  
-  tableData: Row[] = [
-    ["GGV USD Fund V", "Asia Alternative I", 1.0, 1.0, 1.0, 1.0, 2.0, 0.20],
-    ["GGV USD Fund VI", "Asia Alternative Asia", 1.0, 1.0, 1.0, 1.0, 2.0, 0.20],
-    ["GGV USD Fund VI", "Asia Alternative I", 1.0, 1.0, 1.0, 1.0, 2.0, 0.20]
-  ];
-
-  
-
-  cssClassNames = {
-    'headerRow': 'headerTable',
-    'tableRow': 'rowTable',
-  }
-  tableOptions = {
-    'allowHtml': true, 'cssClassNames': this.cssClassNames, alternatingRowStyle: false
-  };
+  tableColumns = tableColumnsData;
+  tableData = tableDataData;
+  tableOptions = tableOptionsData;
 }
