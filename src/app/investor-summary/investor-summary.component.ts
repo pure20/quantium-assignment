@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartType, getPackageForChart, ScriptLoaderService } from 'angular-google-charts';
 import { Row } from 'angular-google-charts/lib/components/chart-base/chart-base.component';
-
+import { columnChartColumns as columnChartColumnsData, columnChartData as columnChartDataData } from './column-mock-data';
 @Component({
   selector: 'app-investor-summary',
   templateUrl: './investor-summary.component.html',
@@ -12,6 +12,8 @@ export class InvestorSummaryComponent implements OnInit {
   dateFormat: google.visualization.DateFormat;
   myFormatters: any;
   myAggregatedFormatters: any;
+  
+
   constructor(private loaderService: ScriptLoaderService)
   {
 
@@ -78,19 +80,8 @@ export class InvestorSummaryComponent implements OnInit {
   tableType: ChartType = ChartType.Table;
   columnType: ChartType =ChartType.ColumnChart;
   // column chart
-  columnChartColumns = [
-    'Name',
-    'USD Fund V',
-    'USD Fund VI'
-  ];
-  
-  columnChartData: Row[] = [
-    ['Contribution', 10, 10],
-    ['Distribution', 10, 0],
-    ['NAV', 30, 20],
-    ['Total value', 50, 20],
-   
-  ];
+  columnChartColumns = columnChartColumnsData;
+  columnChartData = columnChartDataData;
  
   options = {
     colors: ['#0070c0', '#1f4e79'],
