@@ -30,6 +30,11 @@ export class LoginComponent implements OnInit {
 
   login(): void
   {
+    if ( this.signInForm.invalid )
+    {
+        return;
+    }
+    
     this._router.navigate(['/fund']);
   }
 }

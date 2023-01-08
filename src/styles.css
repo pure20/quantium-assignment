@@ -261,3 +261,12 @@ a.active {
 .no-wrap {
     white-space: nowrap;
 }
+
+.mat-mdc-text-field-wrapper,
+.mat-mdc-text-field-wrapper:hover {
+    background-color: transparent !important;
+}
+
+.fg-pwd {
+    color: #0464ac !important;
+}
