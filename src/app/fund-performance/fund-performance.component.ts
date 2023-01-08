@@ -22,10 +22,6 @@ export class FundPerformanceComponent implements OnInit {
       // Start creating your chart now
       this.myFormatters = [
         {
-          formatter: new google.visualization.PatternFormat('<a class="link" href="">{0}</a>'),
-          colIndex: [0],
-        },
-        {
           formatter: new google.visualization.DateFormat({ pattern: "MM-yyyy" }),
           colIndex: 1
         },
@@ -170,6 +166,7 @@ export class FundPerformanceComponent implements OnInit {
     ["Tinker Technologies", new Date(2018, 9), "Internet Software & Services", "-", 12.33, 40.00, 40.00, null, 40.00, 40.00, 1, null],
     ["TSM Healthcare", new Date(2019, 11), "Health Care Equipment & Supplies", "-", 18.72, 48.00, 48.00, null, 48.00, 48.00, 1, null],
     ["WD", new Date(2019, 10), "Computers & Peripherals", "-", 50.00, 8.00, 8.00, null, 30.00, 30.00, 3.75, 155.87],
+    ["Total", null, null, "-", null, 218.10, 203.10, 70.00, 235.10, 305.10, 1.40, 15.30],
   ];
 
   

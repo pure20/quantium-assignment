@@ -21,9 +21,10 @@ export const options = {
     legend: { position: 'top', textStyle: {fontSize: 11}, alignment:'center' },
     isStacked: true,
     hAxis: {
-      gridlines: { color: 'transparent' },
+      
     },
     vAxis:{
       gridlines: { color: 'transparent' },
+      textPosition: 'none',
     },
 };

@@ -145,10 +145,10 @@ a.active {
 }
 
 .rowTable  {
-    background-color: #f4f5f8 !important;
+    /*background-color: #efefef !important;*/
 }
 
-.link {
+.ps-name {
     color: #1e81b0;
 }
 
@@ -165,7 +165,9 @@ a.active {
 .portfolio-summary .google-visualization-table-table td,
 .portfolio-summary .google-visualization-table-table th,
 .aa-performance .google-visualization-table-table td,
-.aa-performance .google-visualization-table-table th {
+.aa-performance .google-visualization-table-table th,
+.aggregated-overview .google-visualization-table-table td,
+.aggregated-overview .google-visualization-table-table th {
     border-width: 0px 0px 1px 0px !important;
     border-color: #e2e2e2;
 }
@@ -176,6 +178,39 @@ a.active {
 .portfolio-summary .google-visualization-table-table td:nth-child(10) {
     border-width: 0px 1px 1px 0px !important;
     border-color: #e2e2e2;
+}
+
+.portfolio-summary .google-visualization-table-table tr td:first-child {
+    color: #1e81b0;
+} 
+
+.portfolio-summary .google-visualization-table-table tr:nth-child(9) td {
+    background-color: #17375e;
+    color: white !important;
+    font-weight: bold;
+}
+
+
+.portfolio-summary .google-visualization-table-table tr:nth-child(1n+1) td:nth-child(1n+4) {
+    text-align: center;
+}
+
+.aggregated-overview .google-visualization-table-table td:nth-child(4) {
+    color: green;
+}
+
+.aa-performance .google-visualization-table-table tr td:first-child {
+    color: #1e81b0;
+}
+
+.aa-performance .google-visualization-table-table tr:last-child td {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: black;
+}
+
+.aa-performance .google-visualization-table-table tr:nth-child(4) td:nth-child(1n+2) {
+    border-bottom: 1px solid black;
 }
 
 .overflow-table {

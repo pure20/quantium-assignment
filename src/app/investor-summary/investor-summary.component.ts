@@ -20,7 +20,6 @@ import {
   styleUrls: ['./investor-summary.component.css']
 })
 export class InvestorSummaryComponent implements OnInit {
-  private readonly chartPackage = getPackageForChart(ChartType.Table);
   dateFormat: google.visualization.DateFormat;
   myFormatters: any;
   myAggregatedFormatters: any;
@@ -32,14 +31,14 @@ export class InvestorSummaryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loaderService.loadChartPackages(this.chartPackage).subscribe(() => {
+    this.loaderService.loadChartPackages().subscribe(() => {
       this.myAggregatedFormatters = [
         {
-          formatter: new google.visualization.NumberFormat({ pattern: "$#,###.0m" }),
+          formatter: new google.visualization.NumberFormat({ pattern: "$#,###.00m" }),
           colIndex: 1
         },
         {
-          formatter: new google.visualization.NumberFormat({ pattern: "$#,###.0m" }),
+          formatter: new google.visualization.NumberFormat({ pattern: "$#,###.00m" }),
           colIndex: 2
         },
         {
@@ -54,10 +53,6 @@ export class InvestorSummaryComponent implements OnInit {
       ]
       // Start creating your chart now
       this.myFormatters = [
-        {
-          formatter: new google.visualization.PatternFormat('<a class="link" href="">{0}</a>'),
-          colIndex: [0],
-        },
         {
           formatter: new google.visualization.NumberFormat({ pattern: "#,###.0" }),
           colIndex: 2

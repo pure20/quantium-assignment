@@ -7,7 +7,8 @@ export const tableColumns = [
 export const tableData: Row[] = [
     ["GGV USD Fund V", "Asia Alternative I", 1.0, 1.0, 1.0, 1.0, 2.0, 0.20],
     ["GGV USD Fund VI", "Asia Alternative Asia", 1.0, 1.0, 1.0, 1.0, 2.0, 0.20],
-    ["GGV USD Fund VI", "Asia Alternative I", 1.0, 1.0, 1.0, 1.0, 2.0, 0.20]
+    ["GGV USD Fund VI", "Asia Alternative I", 1.0, 1.0, 1.0, 1.0, 2.0, 0.20],
+    ["Total", "", 3.0, 3.0, 3.0, 3.0, 2.0, 0.20]
  ];
 
   
