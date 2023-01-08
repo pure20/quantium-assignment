@@ -9,11 +9,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { SharedModule } from './shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SidebarComponent } from './shared/layout/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +26,7 @@ import { SharedModule } from './shared/shared.module';
     MatInputModule,
     MatButtonModule,
     SharedModule,
+    FontAwesomeModule 
   ],
   providers: [],
   bootstrap: [AppComponent],

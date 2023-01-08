@@ -13,7 +13,7 @@ html, body {
     -webkit-font-smoothing: auto;
     -moz-osx-font-smoothing: auto;
     font-size: 15px;
-
+    background-color: #f7f9ff
 }
 
 body { 
@@ -64,7 +64,7 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
-    width: 210px;
+    width: 230px;
     align-items: stretch;
     overflow: visible;
     height: auto;
@@ -72,6 +72,8 @@ body {
     background-color: white;
     border-right: 1px solid #EFEFEF;
     z-index: 20;
+    top: 0;
+    bottom: 0;
 }
 
 .navigation-content {
@@ -81,12 +83,25 @@ body {
 
 .nagivation-top {
     border-bottom: 1px solid #EFEFEF;
-    padding: 10px;
+    background-color: white;
+}
+
+.top-banner-wrapper {
+    background-color: white;
+    padding: 15px ;
+    border: 1px solid #EFEFEF;
+    border-width: 1px 0px 1px 0px;
+    font-size: 15px;
+}
+.top-banner-content {
+    max-width: 80%;
+    width: 100%;
+    margin: auto;
 }
 
 .content-wrapper {
     position: relative;
-    padding-left: 210px;
+    padding-left: 230px;
 }
 
 a.sub-menu:hover,
@@ -97,6 +112,9 @@ a.main-menu:hover {
     margin-left: 20px;
 }
 
+a.active {
+    font-weight: bold;
+}
 .mat-mdc-button {
     background-color: #17375e;
 }
@@ -126,8 +144,12 @@ a.main-menu:hover {
     padding: 2px 20px !important;
 }
 
+.rowTable  {
+    background-color: #f4f5f8 !important;
+}
+
 .link {
-    color: #77afe5;
+    color: #1e81b0;
 }
 
 .portfolio-summary td,
@@ -145,6 +167,7 @@ a.main-menu:hover {
 .aa-performance .google-visualization-table-table td,
 .aa-performance .google-visualization-table-table th {
     border-width: 0px 0px 1px 0px !important;
+    border-color: #e2e2e2;
 }
 
 .portfolio-summary .google-visualization-table-table th:nth-child(5),
@@ -152,8 +175,31 @@ a.main-menu:hover {
 .portfolio-summary .google-visualization-table-table td:nth-child(5),
 .portfolio-summary .google-visualization-table-table td:nth-child(10) {
     border-width: 0px 1px 1px 0px !important;
+    border-color: #e2e2e2;
 }
 
 .overflow-table {
     overflow-x: scroll;
+}
+
+.tx-center {
+    text-align: center !important;
+}
+
+.label {
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px 20px;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+}
+
+.label-blue {
+    background-color: #deebf7;
+    color: #49608d;
+}
+.label-green {
+    background-color: #e2f0d9;
+    color: #49608d;
 }

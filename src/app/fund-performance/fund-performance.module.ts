@@ -7,7 +7,11 @@ import { GoogleChartsModule } from 'angular-google-charts';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 const routes: Routes = [
   { path: '', component: FundPerformanceComponent },
 ]
@@ -23,7 +27,12 @@ const routes: Routes = [
     GoogleChartsModule,
     MatCardModule,
     MatButtonToggleModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    FontAwesomeModule
   ]
 })
 export class FundPerformanceModule { }

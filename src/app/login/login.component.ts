@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,17 +13,23 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private _formBuilder: UntypedFormBuilder,
+    private _router: Router
   )
   {
 
   }
 
   ngOnInit(): void
-    {
-        // Create the form
-        this.signInForm = this._formBuilder.group({
-            email     : ['', [Validators.required, Validators.email]],
-            password  : ['', Validators.required],
-        });
-    }
+  {
+      // Create the form
+      this.signInForm = this._formBuilder.group({
+          email     : ['', [Validators.required, Validators.email]],
+          password  : ['', Validators.required],
+      });
+  }
+
+  login(): void
+  {
+    this._router.navigate(['/fund']);
+  }
 }

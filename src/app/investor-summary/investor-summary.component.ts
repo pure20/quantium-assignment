@@ -109,6 +109,7 @@ export class InvestorSummaryComponent implements OnInit {
 
   cssAggregatedClassNames = {
     'headerRow': 'headerTable',
+    'tableRow': 'rowTable',
   }
   tableAggregatedOptions = {
     'allowHtml': true, 'cssClassNames': this.cssAggregatedClassNames, alternatingRowStyle: false
@@ -129,6 +130,7 @@ export class InvestorSummaryComponent implements OnInit {
 
   cssClassNames = {
     'headerRow': 'headerTable',
+    'tableRow': 'rowTable',
   }
   tableOptions = {
     'allowHtml': true, 'cssClassNames': this.cssClassNames, alternatingRowStyle: false

@@ -1,10 +1,13 @@
 <div class="w-full content-container">
-    <div class="p-10">
+    <div class="p-7">
       <div>
         <div class="flex flex-row flex-auto gap-4">
           <mat-card class="relative flex flex-row w-full">
             <mat-card-content>
-                <h1 class="font-medium">Fund performance: GGV USD Fund V</h1>
+                <h1 class="font-medium left">Fund performance: GGV USD Fund V</h1>
+                <div class="right">
+                    <div><fa-icon [icon]="faCalendar" class="ml-2 text-lg"></fa-icon></div>
+                </div>
             </mat-card-content>
           </mat-card>
         </div>
@@ -60,6 +63,7 @@
                   <span class="caption">Realization and Portfolio Summary in USDE Million unless otherwise stated</span>
                 </div>
                 <div class="right">
+                    View by: 
                   <mat-button-toggle-group value="asset">
                     <mat-button-toggle value="deal">Deal</mat-button-toggle>
                     <mat-button-toggle value="asset">Asset</mat-button-toggle>

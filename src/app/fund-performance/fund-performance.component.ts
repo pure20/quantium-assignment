@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartType, getPackageForChart, Row, ScriptLoaderService } from 'angular-google-charts';
+import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-fund-performance',
@@ -10,6 +11,7 @@ export class FundPerformanceComponent implements OnInit {
   private readonly chartPackage = getPackageForChart(ChartType.Table);
   dateFormat: google.visualization.DateFormat;
   myFormatters: any;
+  faCalendar = faCalendarDays;
   constructor(private loaderService: ScriptLoaderService)
   {
 
@@ -115,9 +117,9 @@ export class FundPerformanceComponent implements OnInit {
     [new Date(2017, 9), 100, 90],
     [new Date(2018, 0), 120, 110],
     [new Date(2018, 3), 150, 140],
-    [new Date(2018, 6), 220, 200],
-    [new Date(2018, 9), 220, 200],
-    [new Date(2019, 0), 220, 200],
+    [new Date(2018, 6), 210, 200],
+    [new Date(2018, 9), 210, 200],
+    [new Date(2019, 0), 210, 200],
     [new Date(2019, 3), 300, 220],
     [new Date(2019, 6), 300, 220],
     [new Date(2019, 9), 300, 220],
@@ -174,7 +176,9 @@ export class FundPerformanceComponent implements OnInit {
 
   cssClassNames = {
     'headerRow': 'headerTable',
+    'tableRow': 'rowTable',
   }
+
   tableOptions = {
     'allowHtml': true, 'cssClassNames': this.cssClassNames, alternatingRowStyle: false
   };

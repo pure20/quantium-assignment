@@ -1,46 +1,14 @@
-
-<div class="navigation-sidebar-wrapper leading-10">
-    <div class="navigation-content">
-        <img src="assets/images/ggv-capital.png" width="80" />
-        <ng-container>
-            <div class="pt-14">
-                <div><a href="/investor-summary" class="main-menu">Investor summary</a></div>
+<div *ngIf="showSidebar">
+    <app-sidebar [activeRoute]="activeRoute"></app-sidebar>
+    <div class="flex flex-col flex-auto w-full min-w-0">
+        <div class="content-wrapper">
+            <div class="nagivation-top pl-7 pt-2 pb-2">
+                <fa-icon [icon]="faBars" class="text-lg"></fa-icon>
             </div>
-        </ng-container>
-        <ng-container>
-            <div class="pt-4">
-                Fund performance
-                <ng-container>
-                    <div><a href="/fund-performance" class="sub-menu">USD Fund V</a></div>
-                    <div><a class="sub-menu">USD Fund VI</a></div>
-                </ng-container>
-            </div>
-        </ng-container>
-        <ng-container>
-            <div class="pt-4">
-                Highlighted portfolio
-                <ng-container>
-                    <div><a class="sub-menu">Alibaba</a></div>
-                    <div><a class="sub-menu">Taikang insurance</a></div>
-                    <div><a class="sub-menu">GME Asset</a></div>
-                </ng-container>
-            </div>
-        </ng-container>
-        <ng-container>
-            <div class="pt-4">
-                File manager
-                <ng-container>
-                    <div><a class="sub-menu">Tax center</a></div>
-                    <div><a href="/file-manager" class="sub-menu">Other documents</a></div>
-                </ng-container>
-            </div>
-        </ng-container>
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>
-<div class="flex flex-col flex-auto w-full min-w-0">
-    
-    <div class="content-wrapper">
-        <div class="nagivation-top">Top Navigation</div>
-        <router-outlet></router-outlet>
-    </div>
+<div *ngIf="!showSidebar">
+    <router-outlet></router-outlet>
 </div>
